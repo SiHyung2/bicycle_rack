@@ -21,7 +21,7 @@
 기존 ui부분에 지도 API를 추가했습니다.
 기존 manifast에 client id를 넣는 부분을 코드 안에 넣어 간소화했습니다
 
-`
+```
     public void onMapReady(@NonNull NaverMap naverMap) {
         Marker marker = new Marker();
         marker.setPosition(new LatLng(37.5666102, 126.9783881)); // 서울시청 좌표
@@ -31,5 +31,5 @@
             return true;
         });
     }
-`
+```
 이 부분에서 지도 다루는 부분을 넣으면 됩니다.
