@@ -13,6 +13,3 @@
 .externalNativeBuild
 .cxx
 local.properties
-
-# AndroidManifest 보안용 - 내 api키 숨기기
-app/src/main/AndroidManifest.xml

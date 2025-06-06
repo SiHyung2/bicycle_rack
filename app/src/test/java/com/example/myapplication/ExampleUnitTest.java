@@ -1,4 +1,4 @@
-package com.example.bicycle_rack;
+package com.example.myapplication;
 
 import org.junit.Test;
 
