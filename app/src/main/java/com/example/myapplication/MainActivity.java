@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,11 +19,18 @@ import com.example.myapplication.ui.BikeComponent.BikeInfo;
 import com.example.myapplication.ui.BottomSheet;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.naver.maps.geometry.LatLng;
+import com.naver.maps.map.CameraUpdate;
 import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.NaverMapSdk;
 import com.naver.maps.map.OnMapReadyCallback;
+import com.naver.maps.map.clustering.Clusterer;
+import com.naver.maps.map.clustering.ClusteringKey;
 import com.naver.maps.map.overlay.Marker;
+import com.opencsv.exceptions.CsvException;
+
+import java.io.IOException;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
     private SearchView searchEditText;
@@ -52,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 return false;
             }
         }));
+
         initNaverMap(savedInstanceState);
     }
 
@@ -68,6 +77,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         bottomSheet.show(getSupportFragmentManager(), bottomSheet.getTag());
     }
 
+
     @Override protected void onStart() { super.onStart(); mapView.onStart(); }
     @Override protected void onResume() { super.onResume(); mapView.onResume(); }
     @Override protected void onPause() { mapView.onPause(); super.onPause(); }
@@ -82,8 +92,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.onLowMemory();
     }
 
+
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
+        /*
         Marker marker = new Marker();
         marker.setPosition(new LatLng(37.5666102, 126.9783881)); // 서울시청 좌표
         marker.setMap(naverMap);
@@ -92,5 +104,29 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             openSheet();
             return true;
         });
+         */
+
+        // 데이터 가져오기
+        Map<BikeRack, Object> bikeRacks;
+        try {
+            bikeRacks = DataLoader.readExcel(this);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (CsvException e) {
+            throw new RuntimeException(e);
+        }
+
+        // 클러스터링 마커에 데이터 & 지도 추가
+        Clusterer<BikeRack> clusterer = new Clusterer.Builder<BikeRack>().build();
+        clusterer.addAll(bikeRacks);
+        clusterer.setMap(naverMap);
+
+        // 학교 위치
+        LatLng initialPosition = new LatLng(35.859602, 128.487495);
+
+        // 카메라 위치 업데이트
+        CameraUpdate cameraUpdate = CameraUpdate.scrollTo(initialPosition);
+        naverMap.moveCamera(cameraUpdate);
+
     }
 }

@@ -41,4 +41,6 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation("com.naver.maps:map-sdk:3.21.0")
+    implementation ("com.opencsv:opencsv:5.6")
+    implementation ("com.google.android.material:material:1.10.0")
 }
