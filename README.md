@@ -1,15 +1,21 @@
 ## 프리뷰 ##
 **1-앱시작화면**
+
+<br>
 <img width="176" alt="Image" src="https://github.com/user-attachments/assets/32b4353e-8bd6-418f-a371-c70fb92d8580" />
 
 **2-선택한 마커 표시**
+
+<br>
 <img width="179" alt="Image" src="https://github.com/user-attachments/assets/3b87eb64-41f9-43ea-898e-fc4dcff58b6c" />
 
 **3-검색기능(경북대, 대구역 검색)**
+
 <img width="181" alt="Image" src="https://github.com/user-attachments/assets/4ce2659c-88f2-4b55-a864-258c0d037b2d" />
 <img width="178" alt="Image" src="https://github.com/user-attachments/assets/69fca493-5621-45f3-8ff2-0de8985db04f" />
 
 **4-필터 기능(중구 검색&공기주입기)**
+
 <img width="179" alt="Image" src="https://github.com/user-attachments/assets/ac6789f8-9976-4444-9dc6-75c586f5d3b2" />
 
 **5-거치위치 저장**
