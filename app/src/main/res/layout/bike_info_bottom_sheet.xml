@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- 왼쪽 정보 영역 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_station_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대여소 이름"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/text_station_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주소"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/text_available_bikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사용 가능한 자전거"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:id="@+id/text_is_exist_air_pump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공기주입기여부"
+            android:textSize="14sp"
+            android:textColor="#333333"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- 오른쪽 즐겨찾기/거치 정보 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="거치 위치"
+            android:textSize="13sp"
+            android:textColor="#444444"
+            android:layout_marginBottom="6dp" />
+
+        <RatingBar
+            android:id="@+id/bikerack_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="1"
+            android:stepSize="1"
+            android:isIndicator="false"
+            android:layout_marginTop="0dp"
+            android:progressTint="#66CCFF"
+            android:progressBackgroundTint="#CCCCCC"
+            android:secondaryProgressTint="#CCCCCC"
+            />
+    </LinearLayout>
+
+</LinearLayout>
