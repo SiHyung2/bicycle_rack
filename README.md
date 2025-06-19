@@ -6,7 +6,8 @@
 
 ## 핵심 구조 ##
 
-src.
+src:.
+|
 ├─java
 │  └─com
 │      └─example
