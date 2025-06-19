@@ -6,7 +6,7 @@
 
 ## 핵심 구조 ##
 
-
+src.
 ├─java
 │  └─com
 │      └─example
@@ -31,6 +31,7 @@
     │      bottom_sheet.xml
     ├─raw
     └─     data.csv
+
 
 
 **검색 원리**
