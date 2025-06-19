@@ -1,8 +1,66 @@
 ## 실행 방법 ##
+
 1. MainActiviy에서 clien-id부분에 자신의 네이버 AI API - client id를 삽입한다
 2. 에뮬레이터에서 기본언어를 한글로 설정한다
 
+
+## 핵심 구조 ##
+
+
+├─java
+│  └─com
+│      └─example
+│          └─myapplication
+│              │  DataLoader.java
+│              │  MainActivity.java
+│              │
+│              └─ui
+│                  │  BikeInfoBottomSheet.java
+│                  │  BottomSheet.java
+│                  │
+│                  └─BikeComponent
+│                          BikeAdapter.java
+│                          BikeInfo.java
+│                          BikeRack.java
+│                          BikeViewHolder.java
+│
+└─res
+    ├─layout
+    │      activity_main.xml
+    │      bike_info_bottom_sheet.xml
+    │      bottom_sheet.xml
+    ├─raw
+    └─     data.csv
+
+
+**검색 원리**
+- activity_main.java
+  - setupSearchListener()
+
+**자전거 보관대 파싱**
+1. 자전거 보관대 엑셀 파일
+  - raw>data.csv
+2. 자전거 보관대 파싱 객체
+  - BikeRack객체
+3. 자전거 보관대 파싱 클래스
+  - DataLoader.java에서 BikeRack객체를 가져와서 저장한다
+
+**자전거 보관대 마커**
+- 자전거 마커 표시하기
+  - bikeRacks = DataLoader.readExcel(this);
+  - Clusterer.Builder
+  - leafMarkerUpdater
+- UI의 마커에서 bikeRack의 위치 찾기
+  - LatLng position = marker.getPosition();
+
+**상태 관리**
+- BikeAdapter.java에서
+- BikeViewHolder.java
+
+
+
 ## 프리뷰 ##
+
 **1-앱시작화면**
 
 <img width="176" alt="Image" src="https://github.com/user-attachments/assets/32b4353e-8bd6-418f-a371-c70fb92d8580" />
