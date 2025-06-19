@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void initNaverMap(Bundle savedInstanceState){
-        NaverMapSdk.getInstance(this).setClient(new NaverMapSdk.NcpKeyClient("fl1m8z91vz"));
+        NaverMapSdk.getInstance(this).setClient(new NaverMapSdk.NcpKeyClient("네이버 AI API client-id 넣으세요!"));
 
         // 뷰바인딩 사용 (수정)
         binding.mapFragment.onCreate(savedInstanceState);
