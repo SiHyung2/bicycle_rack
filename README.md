@@ -57,7 +57,7 @@ src:.
   - LatLng position = marker.getPosition();
 
 **상태 관리**
-- BikeAdapter.java에서
+- BikeAdapter.java
 - BikeViewHolder.java
 
 
